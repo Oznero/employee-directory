@@ -28,8 +28,6 @@ const getInputVal = function () {
     const phoneNum = $('#phoneNum').val();
     employeeList.push({ name: nameVal, officeNum: officeNum, phoneNum: phoneNum });
 
-    console.log(employeeList);
-
     //Clear the fields
     $('#name').val('');
     $('#officeNum').val('');
@@ -39,17 +37,14 @@ const getInputVal = function () {
 $('#add').on('click', getInputVal);
 
 // 4. Verify option that allows users to input a name and renders yes if the employee exists and no otherwise
-const verifyUser = function () {
+const verifyUser = function (){
     const user = $('#name').val();
-    for(let i = 0; i < employeeList.length; i++){
-        for(key in employeeList[i]){
-            if(employeeList[i][key.indexOf(user)!== -1]){
-                document.write('Yes');
-            }else{
-                document.write('No');
-            }
-        }
+    if(employeeList.includes(user)){
+        document.write('Yes');
+    }else{
+        document.write('No');
     }
-    console.log(`user is: ${user} and array position is ${userSearch}`);
 }
 $('#verify').on('click', verifyUser);
+
+// 5. Update option that allows the user to input name, office number, and phone number and updates the office number and phone number of the employee that matches the input name, and then renders the updated employee list.
