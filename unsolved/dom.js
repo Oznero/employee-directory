@@ -62,7 +62,13 @@ const $ = function (selector) {
       nodeList[i].addEventListener(action, cb);
     }
   }
-
+/*
+  const hide = function (){
+    for (let i = 0; i < nodeList.length; i++) {
+      nodeList[i].style.display = 'none';
+    }
+  }
+*/
   return {
     text: text,
     html: html,
@@ -74,5 +80,6 @@ const $ = function (selector) {
     prepend: prepend,
     on: on,
     val: val
+    //hide: hide
   };
 }
