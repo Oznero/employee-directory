@@ -9,9 +9,9 @@ const render = function () {
     $('.text').empty();
 
     for (let i = 0; i < employeeList.length; i++) {
-        $('.text').append(`<p>${employeeList[i].name}</p>`);
-        $('.text').append(`<p>${employeeList[i].officeNum}</p>`);
-        $('.text').append(`<p>${employeeList[i].phoneNum}</p>`);
+        $('.text').append(`<p>Name: ${employeeList[i].name}</p>`);
+        $('.text').append(`<p>Office: ${employeeList[i].officeNum}</p>`);
+        $('.text').append(`<p>Phone: ${employeeList[i].phoneNum}</p>`);
     }
 }
 
@@ -26,7 +26,7 @@ const getInputVal = function () {
     const nameVal = $('#name').val();
     const officeNum = $('#officeNum').val();
     const phoneNum = $('#phoneNum').val();
-    employeeList.push({ name: nameVal, officeNum: officeNum, phoneNum: phoneNum });
+    employeeList.push({name: nameVal, officeNum: officeNum, phoneNum: phoneNum});
 
     //Clear the fields
     $('#name').val('');
@@ -39,10 +39,14 @@ $('#add').on('click', getInputVal);
 // 4. Verify option that allows users to input a name and renders yes if the employee exists and no otherwise
 const verifyUser = function () {
     const user = $('#name').val();
-    if (employeeList.includes(user)) {
-        document.write('Yes');
-    } else {
-        document.write('No');
+    for (let i = 0; i < employeeList.length; i++){
+        if (employeeList[i].name.includes(user)) {
+            document.write('Yes');
+        } else {
+            document.write('No');
+            //console.log(`${employeeList[i].name.includes(user)} user is ${user}`);
+        }
+
     }
 }
 $('#verify').on('click', verifyUser);
