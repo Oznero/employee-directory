@@ -45,6 +45,7 @@ const verifyUser = function () {
     } else {
         $('.text').append('No');
     }
+    console.log(searchIndex);
 }
 $('#verify').on('click', verifyUser);
 
@@ -55,8 +56,8 @@ $('#verify').on('click', verifyUser);
 // 6. Delete option that deletes the employee with the matching name and then renders the updated employee list
 const removeName = function () {
     const user = $('#name').val();
-    console.log(employeeList.indexOf(user));
-    employeeList.splice(employeeList.indexOf(user), 1);
+    const searchIndex = employeeList.findIndex((obj => obj.name == user));
+    employeeList.splice(searchIndex, 1);
 
     $('#name').val('');
     render();
