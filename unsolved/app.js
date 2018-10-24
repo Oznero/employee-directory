@@ -46,17 +46,6 @@ const verifyUser = function () {
         $('.text').append('No');
     }
 }
-/*
-const user = $('#name').val();
-for (let i = 0; i < employeeList.length; i++){
-    if (employeeList[i].name.includes(user)) {
-        console.log('Yes');
-    } else {
-        console.log('No');
-    }
-
-}
-*/
 $('#verify').on('click', verifyUser);
 
 // 5. Update option that allows the user to input name, office number, and phone number and updates the office number and phone number of the employee that matches the input name, and then renders the updated employee list.
