@@ -4,14 +4,26 @@
     $('.text').hide();
 })();
 */
+let cardTemplate = function(empName, officeNum, phoneNum){
+    return ` <br>
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">Name: ${empName}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Office: ${officeNum}</h6>
+        <h6 class="card-subtitle mb-2 text-muted">Phone: ${phoneNum}</h6>
+      </div>
+    </div>
+    <br>`;
+}
 // 1. Render all of the names in `employeeList` individually in paragraph tags to the div with the class `text`.
 const render = function () {
     $('.text').empty();
 
     for (let i = 0; i < employeeList.length; i++) {
-        $('.text').append(`<p>Name: ${employeeList[i].name}</p>`);
-        $('.text').append(`<p>Office: ${employeeList[i].officeNum}</p>`);
-        $('.text').append(`<p>Phone: ${employeeList[i].phoneNum}</p>`);
+       let empName = employeeList[i].name;
+       let officeNum = employeeList[i].officeNum;
+       let phoneNum = employeeList[i].phoneNum;
+       $('.text').append(cardTemplate(empName, officeNum, phoneNum));
     }
 }
 
