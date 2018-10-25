@@ -6,7 +6,7 @@
 */
 let cardTemplate = function(empName, officeNum, phoneNum){
     return ` <br>
-    <div class="card" style="width: 18rem;">
+    <div class="card" style="width: 500px; height: 140px;">
       <div class="card-body">
         <h5 class="card-title">Name: ${empName}</h5>
         <h6 class="card-subtitle mb-2 text-muted">Office: ${officeNum}</h6>
@@ -53,8 +53,10 @@ const verifyUser = function () {
     const user = $('#name').val();
     const searchIndex = employeeList.findIndex((obj => obj.name == user));
     if (searchIndex !== -1) {
+        $('.text').empty();
         $('.text').append('Yes');
     } else {
+        $('.text').empty();
         $('.text').append('No');
     }
     console.log(searchIndex);

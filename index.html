@@ -12,15 +12,27 @@
 </head>
 
 <body>
-  <input id="name">
-  <input id="officeNum">
-  <input id="phoneNum">
-  <button id="view">View</button>
-  <button id="add">Add</button>
-  <button id="verify">Verify</button>
-  <button id="update">Update</button>
-  <button id="delete">Delete</button>
-  <div class="text"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 bg-dark text-light">
+        <button class="btn btn-dark  w-100" id="view">VIEW</button>
+        <button class="btn btn-dark  w-100" id="add">ADD</button>
+        <button class="btn btn-dark  w-100" id="verify">VERIFY</button>
+        <button class="btn btn-dark  w-100" id="update">UPDATE</button>
+        <button class="btn btn-dark  w-100" id="delete">DELETE</button>
+      </div>
+      <div class="col-lg-9">
+        <div class="row" style="padding: 20px;">
+          <input id="name" placeholder="ex: Jan" class="m-3" style="border: 1px solid grey;">
+          <input id="officeNum" placeholder="ex: 1" class="m-3" style="border: 1px solid grey;">
+          <input id="phoneNum" placeholder="ex: 999-999-9999" class="m-3" style="border: 1px solid grey;">
+        </div>
+        <div class="row" style="padding: 30px;">
+          <div class="text"></div>
+        </div>
+      </div>
+    </div>
+  </div>
   <script src="dom.js"></script>
   <script src="employeeList.js"></script>
   <script src="app.js"></script>
