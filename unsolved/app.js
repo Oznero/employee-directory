@@ -50,8 +50,27 @@ const verifyUser = function () {
 $('#verify').on('click', verifyUser);
 
 // 5. Update option that allows the user to input name, office number, and phone number and updates the office number and phone number of the employee that matches the input name, and then renders the updated employee list.
+const updateUser = function () {
+    const user = $('#name').val();
+    const officeNum = $('#officeNum').val();
+    const phoneNum = $('#phoneNum').val();
+    const searchUser = employeeList.findIndex((obj => obj.name == user));
 
+    if (officeNum) {
+        employeeList[searchUser].officeNum = officeNum;
+    }
+    if(phoneNum){
+        employeeList[searchUser].phoneNum = phoneNum;
+    }
 
+    //Clear the fields
+    $('#name').val('');
+    $('#officeNum').val('');
+    $('#phoneNum').val('');
+    render();
+}
+
+$('#update').on('click', updateUser);
 
 // 6. Delete option that deletes the employee with the matching name and then renders the updated employee list
 const removeName = function () {
