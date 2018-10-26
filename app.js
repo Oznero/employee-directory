@@ -4,7 +4,7 @@
     $('.text').hide();
 })();
 */
-let cardTemplate = function(empName, officeNum, phoneNum){
+let cardTemplate = function (empName, officeNum, phoneNum) {
     return ` <br>
     <div class="card" style="width: 500px; height: 140px;">
       <div class="card-body">
@@ -20,10 +20,10 @@ const render = function () {
     $('.text').empty();
 
     for (let i = 0; i < employeeList.length; i++) {
-       let empName = employeeList[i].name;
-       let officeNum = employeeList[i].officeNum;
-       let phoneNum = employeeList[i].phoneNum;
-       $('.text').append(cardTemplate(empName, officeNum, phoneNum));
+        let empName = employeeList[i].name;
+        let officeNum = employeeList[i].officeNum;
+        let phoneNum = employeeList[i].phoneNum;
+        $('.text').append(cardTemplate(empName, officeNum, phoneNum));
     }
 }
 
@@ -55,9 +55,19 @@ const verifyUser = function () {
     if (searchIndex !== -1) {
         $('.text').empty();
         $('.text').append('Yes');
+
+        //Clear the fields
+        $('#name').val('');
+        $('#officeNum').val('');
+        $('#phoneNum').val('');
     } else {
         $('.text').empty();
         $('.text').append('No');
+        
+        //Clear the fields
+        $('#name').val('');
+        $('#officeNum').val('');
+        $('#phoneNum').val('');
     }
     console.log(searchIndex);
 }
@@ -73,7 +83,7 @@ const updateUser = function () {
     if (officeNum) {
         employeeList[searchUser].officeNum = officeNum;
     }
-    if(phoneNum){
+    if (phoneNum) {
         employeeList[searchUser].phoneNum = phoneNum;
     }
 
